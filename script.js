@@ -27,9 +27,10 @@
         ideal: 192,
         max: 192
       },
+      facingMode:'environment'
       
     }
-    navigator.mediaDevices.getUserMedia({video:constraints,facingMode:'environment'})
+    navigator.mediaDevices.getUserMedia({video:constraints})
       .then(function(mediaStream) {
         stream  = mediaStream;
         on_stream_video.srcObject = stream;
