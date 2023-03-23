@@ -16,7 +16,7 @@
   let stream = null;
 
   function capture() {
-    constraints.video = {
+    constraints = {
         width: {
         min: 192,
         ideal: 192,
@@ -29,7 +29,7 @@
       },
       
     }
-    navigator.mediaDevices.getUserMedia(constraints,{facingMode:'environment'})
+    navigator.mediaDevices.getUserMedia({video:constraints,facingMode:'environment'})
       .then(function(mediaStream) {
         stream  = mediaStream;
         on_stream_video.srcObject = stream;
